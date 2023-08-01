@@ -1,11 +1,11 @@
 @{
     ViewData["Title"] = "Jugar";
 }
-<body>
+<body class="bodyConfig">
     <div class="configJuego">
        <h2>Configuración del Juego</h2>
 
-       <form action="IniciarJuego" method="get">
+       <form method="GET" action='@Url.Action("Comenzar")'>
             <label for="username">Nombre del Jugador: </label>
             <input type="text" name="username" id="username" required>
             <br>
@@ -25,7 +25,7 @@
                 }
             </select>
             <br>
-            <a href='@Url.Action("IniciarJuego","Home")'><input type="submit" value="Iniciar Juego"></a>
+            <button type="submit" class="boton">Comenzar</button>
        </form>
     </div>
     

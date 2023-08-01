@@ -137,7 +137,7 @@ select {
   font-size: 16px;
 }
 
-.configJuego input[type="submit"] {
+.configJuego button[type="submit"] {
   background-color: #072e44;
   color: #ffffff;
   border: none;
@@ -148,6 +148,6 @@ select {
   transition: background-color 0.3s ease;
 }
 
-.configJuego input[type="submit"]:hover {
+.configJuego button[type="submit"]:hover {
   background-color: #043665;
 }
