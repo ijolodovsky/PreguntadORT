@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - TP07 - Jolodovsky</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="icon" type="image/x-icon" href="~/wwwroot/favicon.ico">
+    </head>
+    <body>
+        <header>
+            <nav id="menu">
+                <ul >
+                    <li><a href='@Url.Action("Index","Home")'><img src="~/images/preguntad.png" alt="logo"></a></li>
+                    <li><a href='@Url.Action("ConfigurarJuego","Home")'>Jugar</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div style="padding:20px 10px 0px 10px;">
+            @RenderBody()
+        </div>
+
+        <footer>
+                &copy; @DateTime.Now.Year - Taller de Programación - TP07
+        </footer>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

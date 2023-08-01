@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Jugar";
+}
+<body>
+    <div class="configJuego">
+       <h1>Configuración del Juego</h1>
+
+       <form action="IniciarJuego" method="get">
+            <label for="nombre">Nombre del Jugador</label>
+            <input type="text" name="nombre" id="nombre" required>
+            <br>
+            <label for="dificultad">Dificultad</label>
+            <select name="dificultad" id="dificultad">
+                @foreach (var dificultad in BD.ObtenerDificultades())
+                {
+                    <option value="@dificultad">@dificultad.Nombre</option>
+                }
+            </select>
+            <br>
+            <input type="submit" value="Iniciar Juego">
+       </form>
+    </div>
+    
+</body>
+
