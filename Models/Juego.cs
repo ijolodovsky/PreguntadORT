@@ -35,7 +35,7 @@ public static class Juego{
         return preguntas[indice];
         }
         else{
-            return null!;
+            return null;
         }
     }
 

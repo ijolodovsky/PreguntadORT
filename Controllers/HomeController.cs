@@ -23,10 +23,10 @@ public class HomeController : Controller
         
         Juego.CargarPartida(username, dificultad, categoria);
         if(Juego.ObtenerPregunta() != null){
-            return RedirectToAction("Jugar");
+            return View("Jugar");
         }
         else{
-            return RedirectToAction("ConfigurarJuego");
+            return View("ConfigurarJuego");
         }
     }
 

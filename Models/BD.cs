@@ -22,14 +22,14 @@ public static class BD{
 
     public static List<Pregunta> ObtenerPreguntas(int idCategoria, int idDificultad){
         using(SqlConnection connection = new SqlConnection(cadenaConexion)){
-            string sql = "SELECT * FROM Pregunta WHERE IdCategoria = @IdCategoria AND IdDificultad = @IdDificultad";
+            string sql = "SELECT * FROM Preguntas WHERE IdCategoria = @IdCategoria AND IdDificultad = @IdDificultad";
             return connection.Query<Pregunta>(sql, new {IdCategoria = idCategoria, IdDificultad = idDificultad}).ToList();
         }
     }
 
     public static List<Respuesta> ObtenerRespuestas(List<Pregunta> preguntas){
         using(SqlConnection connection = new SqlConnection(cadenaConexion)){
-            string sql = "SELECT * FROM Respuesta WHERE IdPregunta = @IdPregunta";
+            string sql = "SELECT * FROM Respuestas WHERE IdPregunta = @IdPregunta";
             List<Respuesta> respuestas = new();
             foreach(Pregunta pregunta in preguntas){
                 respuestas.AddRange(connection.Query<Respuesta>(sql, new {IdPregunta = pregunta.IdPregunta}).ToList());
