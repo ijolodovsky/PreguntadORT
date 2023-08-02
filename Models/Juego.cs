@@ -7,12 +7,18 @@ public static class Juego{
     private static List<Pregunta>? preguntas;
     private static List<Respuesta>? respuestas;
 
+    public static string? Username { get => userName; }
+    public static int PuntajeActual { get => puntajeActual; }
+    public static int CantidadPreguntasCorrectas { get => preguntasCorrectas; }
+    public static List<Pregunta>? Preguntas { get => preguntas; }
+    public static List<Respuesta>? Respuestas { get => respuestas; }
+
     public static void InicializarJuego(){
         userName = "";
         puntajeActual = 0;
         preguntasCorrectas = 0;
-        preguntas = new();
-        respuestas = new();
+        preguntas = new List<Pregunta>();
+        respuestas = new List<Respuesta>();
     }
 
     public static List<Categoria> ObtenerCategorias(){
@@ -24,6 +30,7 @@ public static class Juego{
     }
 
     public static void CargarPartida(string username, int dificultad, int categoria){
+        userName = username;
         preguntas = BD.ObtenerPreguntas(categoria, dificultad);
         respuestas = BD.ObtenerRespuestas(preguntas);
     }
@@ -40,22 +47,32 @@ public static class Juego{
     }
 
     public static List<Respuesta> ObtenerProximasRespuestas(int idPregunta){
-        return respuestas!.FindAll(respuesta => respuesta.IdPregunta == idPregunta);
+        List<Respuesta> respuestas = new List<Respuesta>();
+        foreach (Respuesta respuesta in respuestas)
+        {
+            if (respuesta.IdPregunta == idPregunta)
+            {
+                respuestas.Add(respuesta);
+            }
+        }
+        return respuestas;
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
-        Pregunta pregunta = preguntas!.Find(pregunta => pregunta.IdPregunta == idPregunta);
-        Respuesta respuesta = respuestas!.Find(respuesta => respuesta.IdRespuesta == idRespuesta);
+        Pregunta pregunta = preguntas.Find(pregunta => pregunta.IdPregunta == idPregunta);
+        Respuesta respuesta = respuestas.Find(respuesta => respuesta.IdRespuesta == idRespuesta);
         
+        bool esCorrrecta = false;
         if(pregunta!=null && respuesta!=null && respuesta.Correcta){
-            puntajeActual += 100;
-            preguntasCorrectas++;
-            preguntas.Remove(pregunta);
-            respuestas.RemoveAll(respuesta => respuesta.IdPregunta == idPregunta);
-            return true;
+            esCorrrecta = respuesta.Correcta;
+            if(esCorrrecta){
+                puntajeActual += 100;
+                preguntasCorrectas++;
+            }
+            if(pregunta!=null){
+                preguntas.Remove(pregunta);
+            }
         }
-        else{
-            return false;
-        }
+        return esCorrrecta;
     }
 }

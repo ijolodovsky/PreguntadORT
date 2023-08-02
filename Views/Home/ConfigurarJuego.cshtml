@@ -3,14 +3,14 @@
 }
 <body class="bodyConfig">
     <div class="configJuego">
-       <h2>Configuración del Juego</h2>
-
-       <form method="GET" action='@Url.Action("Comenzar", "Home")'>
+       <form method="GET" action='@Url.Action("Comenzar")'>
+            <h2>Configuración del Juego</h2>
             <label for="username">Nombre del Jugador: </label>
             <input type="text" name="username" id="username" required>
             
             <label for="dificultad">Dificultad: </label>
             <select name="dificultad" id="dificultad">
+                <option value="-1">Todas</option>
                 @foreach (var dificultad in BD.ObtenerDificultades())
                 {
                     <option value="@dificultad">@dificultad.Nombre</option>
@@ -19,13 +19,14 @@
             
             <label for="categoria">Categoria: </label>
             <select name="categoria" id="categoria">
+                <option value="-1">Todas</option>
                 @foreach (var categoria in BD.ObtenerCategorias())
                 {
                     <option value="@categoria">@categoria.Nombre</option>
                 }
             </select>
             
-            <button type="submit">Comenzar</button>
+            <input type="submit" value="Jugar" />
        </form>
     </div>
     
