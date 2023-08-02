@@ -8,7 +8,7 @@
        <form method="GET" action='@Url.Action("Comenzar", "Home")'>
             <label for="username">Nombre del Jugador: </label>
             <input type="text" name="username" id="username" required>
-            <br>
+            
             <label for="dificultad">Dificultad: </label>
             <select name="dificultad" id="dificultad">
                 @foreach (var dificultad in BD.ObtenerDificultades())
@@ -16,7 +16,7 @@
                     <option value="@dificultad">@dificultad.Nombre</option>
                 }
             </select>
-            <br>
+            
             <label for="categoria">Categoria: </label>
             <select name="categoria" id="categoria">
                 @foreach (var categoria in BD.ObtenerCategorias())
@@ -24,8 +24,8 @@
                     <option value="@categoria">@categoria.Nombre</option>
                 }
             </select>
-            <br>
-            <button type="submit" class="boton">Comenzar</button>
+            
+            <button type="submit">Comenzar</button>
        </form>
     </div>
     
