@@ -11,12 +11,17 @@ html {
 }
 
 body {
-  margin: 20px 60px 0px 20px;
+  margin: 20px 60px 60px 20px;
 }
 
 footer {
-  margin: 10px 0px 20px 0px;
-  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
 }
 
 header{
@@ -208,6 +213,23 @@ select {
 
 .respuesta:hover {
   background-color: #0056b3;
+}
+
+.siguiente {
+  display: inline-flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #b9bbbd;
+  color: #000000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.siguiente:hover {
+  background-color: #ffffff;
+  border: #c5c3c3 1px solid;
 }
 
 /* Estilos para la validación */

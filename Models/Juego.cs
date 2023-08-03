@@ -36,9 +36,9 @@ public static class Juego{
     }
 
     public static Pregunta ObtenerPregunta(){
-        if(preguntas!.Count > 0){
+        if(preguntas.Count > 0){
         Random random = new();
-        int indice = random.Next(preguntas!.Count);
+        int indice = random.Next(0, preguntas.Count);
         return preguntas[indice];
         }
         else{
@@ -70,7 +70,7 @@ public static class Juego{
             }
             
         }
-        Pregunta pregunta = Preguntas.Find(pregunta => pregunta.IdPregunta == idPregunta);
+        Pregunta pregunta = preguntas.Find(pregunta => pregunta.IdPregunta == idPregunta);
         if(pregunta!=null){
             preguntas.Remove(pregunta);
         }
