@@ -59,19 +59,20 @@ public static class Juego{
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
-        Pregunta pregunta = Preguntas.Find(pregunta => pregunta.IdPregunta == idPregunta);
+        bool esCorrrecta = false;
         Respuesta respuesta = Respuestas.Find(respuesta => respuesta.IdRespuesta == idRespuesta);
         
-        bool esCorrrecta = false;
-        if(pregunta!=null && respuesta!=null && respuesta.Correcta){
+        if(respuesta!=null){
             esCorrrecta = respuesta.Correcta;
             if(esCorrrecta){
                 puntajeActual += 100;
                 preguntasCorrectas++;
             }
-            if(pregunta!=null){
-                preguntas.Remove(pregunta);
-            }
+            
+        }
+        Pregunta pregunta = Preguntas.Find(pregunta => pregunta.IdPregunta == idPregunta);
+        if(pregunta!=null){
+            preguntas.Remove(pregunta);
         }
         return esCorrrecta;
     }

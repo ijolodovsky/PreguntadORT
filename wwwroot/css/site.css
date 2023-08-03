@@ -152,6 +152,78 @@ select {
   background-color: #043665;
 }
 
-.barra-info{
+/* Estilos para la barra de información */
+.barra-info {
+  list-style: none;
+  padding: 0;
   margin-top: 100px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.barra-info li {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Estilos para las preguntas */
+.pregunta {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 400px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.pregunta h3 {
+  margin-left: 10px;
+}
+
+.pregunta p {
+  margin-left: 10px;
+}
+
+/* Estilos para las respuestas */
+.respuestas {
+  margin: 10px;
+}
+
+.respuesta {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #113458;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.respuesta:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para la validación */
+.validacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.validacion h2 {
+  background-color: #113458;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
 }

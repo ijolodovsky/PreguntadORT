@@ -2,9 +2,15 @@
     ViewData["Title"] = "Jugar";
 }
 <body>
-    @if(ViewBag.EsCorrecta){
-        <h2>Correcto</h2>
-    } else{
-        <h2>Incorrecto</h2>
-    }
+    <div class="validacion">
+        @if(ViewBag.EsCorrecta){
+            <h2>Correcto</h2>
+        } else{
+            <h2>Incorrecto</h2>
+        }
+    </div>
+    <div>
+        <a asp-action="Jugar">Siguiente Pregunta</a>
+    </div>
+    
 </body>
