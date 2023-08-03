@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Jugar";
+}
+<body>
+    <div>
+        <ul class="barra-info">
+            <li><p>@ViewBag.Username</p></li>
+            <li><p>@ViewBag.Puntaje</p></li>
+        </ul>
+    </div>
+
+    <div>
+        <p>@ViewBag.Pregunta.IdPregunta</p>
+        <p>@ViewBag.Pregunta.Enunciado</p>
+    </div>
+
+    <form method="post" action='@Url.Action("VerificarRespuesta")'>
+        <input type="hidden" name="idPregunta" value=@ViewBag.Pregunta.IdPregunta />
+        <div style="display:flex; flex-direction:column; width: 50%;margin:0 auto">
+            @foreach (Respuesta resp in ViewBag.Respuestas){
+                <button type="submit" name="idRespuesta" value=@resp.IdRespuesta>@resp.Contenido</button>
+            }
+        </div>
+    </form>
+</body>

@@ -12,13 +12,13 @@ public class HomeController : Controller
     }
 
     public IActionResult ConfigurarJuego(){
-
+        Juego.InicializarJuego();
         ViewBag.Categorias = Juego.ObtenerCategorias();
         ViewBag.Dificultades = Juego.ObtenerDificultades();
-        Juego.InicializarJuego();
         return View();
     }
 
+    [HttpGet]
     public IActionResult Comenzar(string username, int dificultad, int categoria){
         
         Juego.CargarPartida(username, dificultad, categoria);

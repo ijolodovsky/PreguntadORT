@@ -48,7 +48,7 @@ public static class Juego{
 
     public static List<Respuesta> ObtenerProximasRespuestas(int idPregunta){
         List<Respuesta> respuestas = new List<Respuesta>();
-        foreach (Respuesta respuesta in respuestas)
+        foreach (Respuesta respuesta in Respuestas)
         {
             if (respuesta.IdPregunta == idPregunta)
             {
@@ -59,8 +59,8 @@ public static class Juego{
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
-        Pregunta pregunta = preguntas.Find(pregunta => pregunta.IdPregunta == idPregunta);
-        Respuesta respuesta = respuestas.Find(respuesta => respuesta.IdRespuesta == idRespuesta);
+        Pregunta pregunta = Preguntas.Find(pregunta => pregunta.IdPregunta == idPregunta);
+        Respuesta respuesta = Respuestas.Find(respuesta => respuesta.IdRespuesta == idRespuesta);
         
         bool esCorrrecta = false;
         if(pregunta!=null && respuesta!=null && respuesta.Correcta){

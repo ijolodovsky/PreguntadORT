@@ -13,7 +13,7 @@
                 <option value="-1">Todas</option>
                 @foreach (var dificultad in BD.ObtenerDificultades())
                 {
-                    <option value="@dificultad">@dificultad.Nombre</option>
+                    <option value="@dificultad.IdDificultad">@dificultad.Nombre</option>
                 }
             </select>
             
@@ -22,7 +22,7 @@
                 <option value="-1">Todas</option>
                 @foreach (var categoria in BD.ObtenerCategorias())
                 {
-                    <option value="@categoria">@categoria.Nombre</option>
+                    <option value="@categoria.IdCategoria">@categoria.Nombre</option>
                 }
             </select>
             
