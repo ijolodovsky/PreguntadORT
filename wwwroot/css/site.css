@@ -215,7 +215,7 @@ select {
   background-color: #0056b3;
 }
 
-.siguiente {
+.fin a {
   display: inline-flex;
   justify-content: flex-end;
   padding: 10px 20px;
@@ -227,7 +227,7 @@ select {
   transition: background-color 0.3s;
 }
 
-.siguiente:hover {
+.fin a:hover {
   background-color: #ffffff;
   border: #c5c3c3 1px solid;
 }
@@ -252,15 +252,16 @@ select {
 
 .fin {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 400px;
+  margin-top: 300px;
 }
 
 .fin h2 {
   font-size: 36px;
   color: #113458;
-  margin: 0;
+  margin: 20px;
   padding: 20px;
   border: 2px solid #113458;
   border-radius: 5px;
