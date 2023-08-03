@@ -249,3 +249,19 @@ select {
   text-align: center;
   margin: 0;
 }
+
+.fin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 400px;
+}
+
+.fin h2 {
+  font-size: 36px;
+  color: #113458;
+  margin: 0;
+  padding: 20px;
+  border: 2px solid #113458;
+  border-radius: 5px;
+}
