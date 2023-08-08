@@ -237,18 +237,47 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 400px;
+  margin-top: 120px;
+  width: auto;
 }
 
 .validacion h2 {
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
+  width: 400px;
+}
+
+.validacion .correcto {
+  background-color: #9ccdee;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.validacion .incorrecto {
+  background-color: #1c2975;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Estilos para el enlace "Siguiente Pregunta" */
+.siguiente {
+  display: inline-block;
   background-color: #113458;
   color: #ffffff;
   padding: 10px 20px;
+  text-decoration: none;
   border-radius: 5px;
-  font-size: 24px;
-  text-align: center;
-  margin: 0;
+  font-size: 18px;
+  margin-top: 20px;
 }
+
+.siguiente:hover {
+  background-color: #0c243c;
+}
+
+/* Estilos para el enlace "Finalizar" */
 
 .fin {
   display: flex;
